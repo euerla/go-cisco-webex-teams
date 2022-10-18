@@ -43,6 +43,14 @@ func (s *Client) SetAuthToken(accessToken string) {
 	s.common.client.SetAuthToken(accessToken)
 }
 
+// SetProxy method sets the Proxy URL and Port for Resty client.
+//
+// For Example:
+// client.SetProxy("http://proxyserver:8888")
+func (s *Client) SetProxy(proxyURL string) {
+	s.common.client.SetProxy(proxyURL)
+}
+
 // NewClient creates a new API client. Requires a userAgent string describing your application.
 // optionally a custom http.Client to allow for advanced features such as caching.
 func NewClient() *Client {
